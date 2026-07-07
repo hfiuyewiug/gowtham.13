@@ -1,19 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Briefcase, Code2 } from 'lucide-react';
+import { Sparkles, Code2 } from 'lucide-react';
 
 const CurrentlyBuilding = () => {
-  const activeProjects = [
-    {
-      title: "Weekend Explore v1.3",
-      type: "Travel Discovery Platform",
-      status: "Currently Building",
-      description: "A travel discovery platform focused on helping users explore destinations and discover places for their weekend journeys.",
-      progress: 90,
-      tech: ["HTML", "CSS", "JavaScript", "React"]
-    }
-  ];
-
   return (
     <section className="py-24 bg-white border-t border-neutral-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -29,42 +18,42 @@ const CurrentlyBuilding = () => {
               Under Active Development
             </h2>
 
-            {activeProjects.map((project, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-8 rounded-3xl bg-neutral-950 text-white border border-neutral-900 shadow-xl relative overflow-hidden"
-              >
-                {/* Glow Backdrop */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full filter blur-2xl"></div>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-neutral-950 text-white border border-neutral-900 shadow-xl relative overflow-hidden"
+            >
+              {/* Glow Backdrop */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full filter blur-2xl"></div>
 
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">{project.type}</span>
-                    <h3 className="text-xl font-bold text-white mt-1">{project.title}</h3>
-                  </div>
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800">
-                    <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-300">{project.status}</span>
-                  </div>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">Product Roadmap</span>
+                  <h3 className="text-xl font-bold text-white mt-1">Weekend Explore</h3>
                 </div>
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800">
+                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-300">Active Build</span>
+                </div>
+              </div>
 
-                <p className="text-sm text-neutral-400 font-normal leading-relaxed mb-6">
-                  {project.description}
-                </p>
+              <p className="text-sm text-neutral-400 font-normal leading-relaxed mb-8">
+                A travel discovery platform focused on helping users explore destinations and discover places for their weekend journeys.
+              </p>
 
-                {/* Progress bar */}
-                <div className="mb-6">
+              {/* Progress bars list */}
+              <div className="space-y-6">
+                {/* v1.1 */}
+                <div>
                   <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
-                    <span>Build Progress</span>
-                    <span className="text-white">{project.progress}%</span>
+                    <span className="text-white font-semibold">Weekend Explore v1.1</span>
+                    <span className="text-violet-400">90% Done</span>
                   </div>
-                  <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800">
+                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
                     <motion.div 
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${project.progress}%` }}
+                      whileInView={{ width: '90%' }}
                       viewport={{ once: true }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       className="h-full bg-gradient-to-r from-violet-600 to-indigo-500 rounded-full"
@@ -72,16 +61,50 @@ const CurrentlyBuilding = () => {
                   </div>
                 </div>
 
-                {/* Tech Badges */}
-                <div className="flex flex-wrap gap-2 pt-2 border-t border-neutral-900">
-                  {project.tech.map((t) => (
-                    <span key={t} className="px-3 py-1 text-[9px] font-bold text-neutral-400 bg-neutral-900 rounded-full border border-neutral-800">
-                      {t}
-                    </span>
-                  ))}
+                {/* v1.2 */}
+                <div>
+                  <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
+                    <span className="text-white font-semibold">Weekend Explore v1.2</span>
+                    <span className="text-violet-400">20% Done</span>
+                  </div>
+                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '20%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-violet-600 to-indigo-500 rounded-full"
+                    />
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* v1.3 */}
+                <div>
+                  <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
+                    <span className="text-white font-semibold">Weekend Explore v1.3</span>
+                    <span className="text-violet-400">20% Done</span>
+                  </div>
+                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '20%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-violet-600 to-indigo-500 rounded-full"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Tech Badges */}
+              <div className="flex flex-wrap gap-2 pt-6 mt-6 border-t border-neutral-900">
+                {["HTML", "CSS", "JavaScript", "React"].map((t) => (
+                  <span key={t} className="px-3 py-1 text-[9px] font-bold text-neutral-400 bg-neutral-900 rounded-full border border-neutral-800">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           {/* RIGHT: Hackathons Participated */}
