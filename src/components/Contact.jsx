@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +10,14 @@ const Contact = () => {
     message: ''
   });
 
-  const [formStatus, setFormStatus] = useState({
-    submitting: false,
-    success: false,
-    error: false
-  });
+  const [state, handleSubmit] = useForm('mbdvelyy');
+
+  // Reset local form values when Formspree submission succeeds
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormData({ name: '', email: '', message: '' });
+    }
+  }, [state.succeeded]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,22 +25,6 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormStatus({ submitting: true, success: false, error: false });
-
-    // Simulate sending email API delay
-    setTimeout(() => {
-      setFormStatus({ submitting: false, success: true, error: false });
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success status after 3s
-      setTimeout(() => {
-        setFormStatus((prev) => ({ ...prev, success: false }));
-      }, 3000);
-    }, 1500);
   };
 
   return (
@@ -99,7 +87,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* RIGHT: Modern Form */}
+          {/* RIGHT: Modern Formspree Integrated Form */}
           <div className="lg:col-span-7">
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
@@ -124,6 +112,12 @@ const Contact = () => {
                     placeholder="Enter your name"
                     className="w-full px-5 py-3.5 rounded-xl border border-neutral-200 focus:border-neutral-900 bg-neutral-50/30 text-sm outline-none transition-colors duration-200"
                   />
+                  <ValidationError 
+                    prefix="Name" 
+                    field="name" 
+                    errors={state.errors} 
+                    className="text-red-500 text-xs mt-1 block"
+                  />
                 </div>
 
                 {/* Field: Email */}
@@ -140,6 +134,12 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Enter your email address"
                     className="w-full px-5 py-3.5 rounded-xl border border-neutral-200 focus:border-neutral-900 bg-neutral-50/30 text-sm outline-none transition-colors duration-200"
+                  />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email" 
+                    errors={state.errors} 
+                    className="text-red-500 text-xs mt-1 block"
                   />
                 </div>
 
@@ -158,10 +158,16 @@ const Contact = () => {
                     placeholder="What would you like to build?"
                     className="w-full px-5 py-3.5 rounded-xl border border-neutral-200 focus:border-neutral-900 bg-neutral-50/30 text-sm outline-none resize-none transition-colors duration-200"
                   />
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message" 
+                    errors={state.errors} 
+                    className="text-red-500 text-xs mt-1 block"
+                  />
                 </div>
 
-                {/* Status messages */}
-                {formStatus.success && (
+                {/* Success Alert */}
+                {state.succeeded && (
                   <motion.div 
                     initial={{ opacity: 0, y: 5 }} 
                     animate={{ opacity: 1, y: 0 }}
@@ -174,10 +180,10 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  disabled={formStatus.submitting}
+                  disabled={state.submitting}
                   className="w-full py-4 px-6 rounded-xl bg-neutral-950 text-white font-medium hover:bg-neutral-800 transition-colors shadow-sm disabled:opacity-50 flex items-center justify-center gap-2 group cursor-pointer"
                 >
-                  {formStatus.submitting ? (
+                  {state.submitting ? (
                     <span>Sending...</span>
                   ) : (
                     <>
