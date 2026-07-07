@@ -204,9 +204,6 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Background Green Foliage Leaf */}
-          <div className="absolute -right-16 -bottom-16 w-80 h-80 bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=500')] bg-contain bg-no-repeat opacity-25 filter blur-[0.5px] pointer-events-none z-0 transform rotate-12 select-none mix-blend-multiply"></div>
-
           {/* Large portrait container taking the right height */}
           <div
             style={{ 
