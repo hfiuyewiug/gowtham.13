@@ -35,7 +35,7 @@ const Navbar = () => {
             GN
           </div>
           <span className="font-semibold text-lg tracking-tight text-neutral-900 group-hover:text-neutral-600 transition-colors duration-300">
-            Gowtham N
+            Gowtham Nataraj
           </span>
         </a>
 

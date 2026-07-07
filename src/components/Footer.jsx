@@ -37,7 +37,7 @@ const Footer = () => {
                 GN
               </div>
               <span className="font-semibold text-lg tracking-tight">
-                Gowtham N
+                Gowtham Nataraj
               </span>
             </div>
             <p className="text-sm text-neutral-400 font-normal leading-relaxed max-w-sm">
@@ -86,9 +86,9 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs font-medium text-neutral-500">
-          <span>&copy; {new Date().getFullYear()} Gowtham N. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} Gowtham Nataraj. All rights reserved.</span>
           <span className="flex items-center gap-1.5">
-            Designed & Built with <span className="text-rose-500">❤️</span> by Gowtham N
+            Designed & Built with <span className="text-rose-500">❤️</span> by Gowtham Nataraj
           </span>
         </div>
 

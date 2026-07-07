@@ -89,7 +89,7 @@ const Hero = () => {
 
           {/* Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-neutral-900 tracking-tight leading-none mb-3">
-            Gowtham N
+            Gowtham Nataraj
           </h1>
 
           {/* Role */}
@@ -223,7 +223,7 @@ const Hero = () => {
             <div className="w-full h-full rounded-[2.4rem] overflow-hidden bg-neutral-50 relative group">
               <img 
                 src={portraitImg} 
-                alt="Gowtham N" 
+                alt="Gowtham Nataraj" 
                 className="w-full h-full object-cover object-center"
                 draggable="false"
               />

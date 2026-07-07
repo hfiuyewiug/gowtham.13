@@ -52,7 +52,7 @@ const AboutAndSkills = () => {
 
               {/* Description */}
               <p className="text-neutral-400 text-sm md:text-base font-normal leading-relaxed mb-8">
-                I'm <strong>Gowtham N</strong>, a Full Stack Web Developer, creative thinker, and engineering student with an entrepreneurial mindset. I enjoy identifying real-world problems and turning simple ideas into useful digital products. I'm currently building <strong>Weekend Explore</strong> and continuously learning through projects and hackathons. I believe in <strong>creating, experimenting, failing, improving, and building again</strong>. My goal is not just to write code—it's to build products that solve real problems and create meaningful experiences.
+                I'm <strong>Gowtham Nataraj</strong>, a Full Stack Web Developer, creative thinker, and engineering student with an entrepreneurial mindset. I enjoy identifying real-world problems and turning simple ideas into useful digital products. I'm currently building <strong>Weekend Explore</strong> and continuously learning through projects and hackathons. I believe in <strong>creating, experimenting, failing, improving, and building again</strong>. My goal is not just to write code—it's to build products that solve real problems and create meaningful experiences.
               </p>
 
               {/* Information Grid */}
@@ -64,7 +64,7 @@ const AboutAndSkills = () => {
                   </div>
                   <div>
                     <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-semibold">Name</span>
-                    <span className="text-sm font-medium text-neutral-200">Gowtham N</span>
+                    <span className="text-sm font-medium text-neutral-200">Gowtham Nataraj</span>
                   </div>
                 </div>
 

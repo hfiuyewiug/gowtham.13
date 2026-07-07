@@ -173,7 +173,7 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-semibold"
                   >
-                    Thank you! Your message was sent successfully. Gowtham will get back to you shortly.
+                    Thank you! Your message was sent successfully. Gowtham Nataraj will get back to you shortly.
                   </motion.div>
                 )}
 
