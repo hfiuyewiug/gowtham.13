@@ -46,7 +46,7 @@ const Hero = () => {
     { value: "7", label: "Core Technical Skills", icon: Code2 },
     { value: "2", label: "Hackathons Participated", icon: Users },
     { value: "3", label: "Weekend Explore Versions", icon: Trophy },
-    { value: "1", label: "Product Currently Building", icon: Briefcase }
+    { value: "2", label: "Products Currently Building", icon: Briefcase }
   ];
 
   const technologies = [

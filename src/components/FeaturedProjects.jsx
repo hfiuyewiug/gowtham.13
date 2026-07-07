@@ -1,19 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Compass } from 'lucide-react';
+import { ArrowUpRight, Compass, Home } from 'lucide-react';
 
 const Projects = () => {
   const projectsData = [
     {
       id: 1,
       title: "Weekend Explore",
-      description: "A travel discovery platform focused on helping users explore destinations and discover places for their weekend journeys.",
+      description: "Weekend Explore is a travel discovery platform that helps users easily discover interesting places and plan their weekend journeys.",
       tags: ["Developer / Product Builder", "v1.3", "Currently Building"],
       color: "from-sky-500/10 via-blue-500/5 to-white",
       icon: Compass,
       iconColor: "text-blue-500",
       bgGlow: "bg-blue-400/10",
       link: "https://weekend-explore.vercel.app/"
+    },
+    {
+      id: 2,
+      title: "AptFix",
+      description: "AptFix — Apartment Issue Tracking & Maintenance Management System. A digital apartment issue tracking system designed to help residents report problems (electricity, water, maintenance) and track them until resolved.",
+      tags: ["Developer / Product Builder", "Currently Building"],
+      color: "from-emerald-500/10 via-teal-500/5 to-white",
+      icon: Home,
+      iconColor: "text-emerald-500",
+      bgGlow: "bg-emerald-400/10",
+      link: "https://github.com/hfiuyewiug/gowtham.13"
     }
   ];
 
@@ -29,7 +40,7 @@ const Projects = () => {
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-500">Featured Projects</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900">
-              My featured product
+              My featured products
             </h2>
           </div>
           
@@ -44,8 +55,8 @@ const Projects = () => {
           </a>
         </div>
 
-        {/* Projects Grid (Centered single card) */}
-        <div className="max-w-xl mx-auto">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsData.map((project, idx) => (
             <motion.div
               key={project.id}
@@ -55,32 +66,40 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group rounded-3xl border border-neutral-100 bg-neutral-50/50 overflow-hidden hover:border-neutral-200 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-900/[0.02]"
             >
-              <a href={project.link} target="_blank" rel="noreferrer" className="block">
+              <a href={project.link} target="_blank" rel="noreferrer" className="block h-full flex flex-col">
                 {/* Card Header Illustration */}
                 <div className={`h-48 md:h-56 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden border-b border-neutral-100`}>
                   
                   {/* Decorative background shape */}
                   <div className={`absolute w-36 h-36 rounded-full ${project.bgGlow} filter blur-xl group-hover:scale-110 transition-transform duration-500`}></div>
                   
+                  {/* Status Badge */}
+                  <div className="absolute top-6 left-6 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-neutral-100/50 shadow-sm z-20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse"></span>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-600">Currently Building</span>
+                  </div>
+
                   {/* Icon Container */}
                   <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md border border-neutral-100 z-10 group-hover:scale-105 transition-transform duration-300">
                     <project.icon className={`w-8 h-8 ${project.iconColor}`} />
                   </div>
 
                   {/* Diagonal Arrow Overlay */}
-                  <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:border-neutral-300 shadow-sm transition-all duration-300">
+                  <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:border-neutral-300 shadow-sm transition-all duration-300 z-20">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 md:p-8 bg-white">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-violet-600 transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500 font-normal leading-relaxed mb-6">
-                    {project.description}
-                  </p>
+                <div className="p-6 md:p-8 bg-white flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-violet-600 transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-neutral-500 font-normal leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+                  </div>
 
                   {/* Tech Badges */}
                   <div className="flex flex-wrap gap-2">
