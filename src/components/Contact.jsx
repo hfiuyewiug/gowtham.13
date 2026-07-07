@@ -199,6 +199,9 @@ const Contact = () => {
 
         </div>
       </div>
+      
+      {/* Background Green Foliage Leaf */}
+      <div className="absolute -left-20 -bottom-20 w-72 h-72 bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=500')] bg-contain bg-no-repeat opacity-15 filter blur-[1.5px] pointer-events-none z-0 transform -rotate-45 select-none mix-blend-multiply"></div>
     </section>
   );
 };
