@@ -7,7 +7,7 @@ const AboutAndSkills = () => {
   const [showMoreSkills, setShowMoreSkills] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('gowtham@example.com');
+    navigator.clipboard.writeText('yadhur689@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -99,7 +99,7 @@ const AboutAndSkills = () => {
                   <div className="flex-1">
                     <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-semibold">Email</span>
                     <span className="text-sm font-medium text-neutral-200 group-hover:text-violet-400 transition-colors break-all">
-                      gowtham@example.com
+                      yadhur689@gmail.com
                     </span>
                   </div>
                   <span className="text-[10px] text-neutral-600 group-hover:text-neutral-400 transition-colors pr-2 hidden sm:inline">

@@ -66,7 +66,7 @@ const Footer = () => {
                 { icon: <GithubIcon className="w-4.5 h-4.5" />, href: "https://github.com/gowtham-n", label: "GitHub" },
                 { icon: <LinkedinIcon className="w-4.5 h-4.5" />, href: "https://www.linkedin.com/in/gowtham-n-a5272a3a7?utm_source=share_via&utm_content=profile&utm_medium=member_android", label: "LinkedIn" },
                 { icon: <InstagramIcon className="w-4.5 h-4.5" />, href: "https://www.instagram.com/gautak_shetty?igsh=dnhyaG5oZDB1Zmsx", label: "Instagram" },
-                { icon: <Mail className="w-4.5 h-4.5" />, href: "mailto:gowtham@example.com", label: "Email" }
+                { icon: <Mail className="w-4.5 h-4.5" />, href: "mailto:yadhur689@gmail.com", label: "Email" }
               ].map((social, index) => (
                 <a
                   key={index}

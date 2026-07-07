@@ -52,8 +52,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <span className="block text-[9px] text-neutral-400 font-bold uppercase tracking-wider">Email Me</span>
-                    <a href="mailto:gowtham@example.com" className="text-sm font-semibold text-neutral-800 hover:text-violet-600 transition-colors">
-                      gowtham@example.com
+                    <a href="mailto:yadhur689@gmail.com" className="text-sm font-semibold text-neutral-800 hover:text-violet-600 transition-colors">
+                      yadhur689@gmail.com
                     </a>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                 <p className="text-xs text-neutral-500 font-medium">Quick consultation & code design</p>
               </div>
               <a 
-                href="mailto:gowtham@example.com" 
+                href="mailto:yadhur689@gmail.com" 
                 className="w-10 h-10 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white flex items-center justify-center shadow-sm transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 <ArrowUpRight className="w-4 h-4" />
