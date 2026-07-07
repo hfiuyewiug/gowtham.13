@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, ArrowUpRight, Download, Briefcase, Code2, Users, Trophy, Star } from 'lucide-react';
 import portraitImg from '../assets/portrait.png';
+import heroBg from '../assets/hero_bg.png';
 
 // Inline Custom SVGs for brand icons to bypass Lucide package issues
 const GithubIcon = (props) => (
@@ -60,6 +61,12 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-12 flex items-center overflow-hidden bg-gradient-to-b from-white via-[#fcfcfc] to-neutral-50/50">
+      
+      {/* Background Room Backdrop (Wall shadow + plant) */}
+      <div 
+        className="absolute inset-0 bg-cover bg-right md:bg-center bg-no-repeat opacity-[0.95] pointer-events-none z-0 select-none"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      ></div>
       
       {/* Background Dots Pattern */}
       <div className="absolute top-24 left-[10%] opacity-20 w-24 h-24 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
