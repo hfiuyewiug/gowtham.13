@@ -13,7 +13,7 @@ const Projects = () => {
       icon: Compass,
       iconColor: "text-blue-500",
       bgGlow: "bg-blue-400/10",
-      link: "https://github.com/hfiuyewiug/gowtham.13"
+      link: "https://weekend-explore.vercel.app/"
     }
   ];
 
