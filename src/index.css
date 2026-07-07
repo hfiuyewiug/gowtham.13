@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb; /* Soft gray background matching the reference */
+    color: #111827; /* Near black typography */
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Premium Utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.text-stroke-subtle {
+  -webkit-text-stroke: 1px rgba(17, 24, 39, 0.04);
+  color: transparent;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.custom-shadow-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-shadow-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Monogram Text Effect */
+.bg-monogram {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 28rem;
+  line-height: 1;
+  color: rgba(17, 24, 39, 0.015);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.02) 0%, rgba(17, 24, 39, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Hide Scrollbar for Chromium and others */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  color: #111827;
+  font-weight: 300;
+}
