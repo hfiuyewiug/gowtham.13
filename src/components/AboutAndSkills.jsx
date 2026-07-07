@@ -52,7 +52,7 @@ const AboutAndSkills = () => {
 
               {/* Description */}
               <p className="text-neutral-400 text-sm md:text-base font-normal leading-relaxed mb-8">
-                I am Gowtham N, a Full Stack Web Developer and 2nd-year CSE-AIML engineering student. I enjoy building real-world web products and turning ideas into working digital experiences. Currently, I am focused on building and continuously improving Weekend Explore.
+                I'm <strong>Gowtham N</strong>, a Full Stack Web Developer, creative thinker, and engineering student with an entrepreneurial mindset. I enjoy identifying real-world problems and turning simple ideas into useful digital products. I'm currently building <strong>Weekend Explore</strong> and continuously learning through projects and hackathons. I believe in <strong>creating, experimenting, failing, improving, and building again</strong>. My goal is not just to write code—it's to build products that solve real problems and create meaningful experiences.
               </p>
 
               {/* Information Grid */}
