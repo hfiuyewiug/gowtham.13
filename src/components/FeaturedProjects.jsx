@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Compass, Home } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import weekendExploreImg from '../assets/weekend_explore_mockup.jpg';
+import aptfixImg from '../assets/aptfix_mockup.jpg';
 
 const Projects = () => {
   const projectsData = [
@@ -9,22 +11,16 @@ const Projects = () => {
       title: "Weekend Explore",
       description: "Weekend Explore is a travel discovery platform that helps users easily discover interesting places and plan their weekend journeys.",
       tags: ["Developer / Product Builder", "v1.3", "Currently Building"],
-      color: "from-sky-500/10 via-blue-500/5 to-white",
-      icon: Compass,
-      iconColor: "text-blue-500",
-      bgGlow: "bg-blue-400/10",
-      link: "https://weekend-explore.vercel.app/"
+      link: "https://weekend-explore.vercel.app/",
+      image: weekendExploreImg
     },
     {
       id: 2,
       title: "AptFix",
       description: "AptFix — Apartment Issue Tracking & Maintenance Management System. A digital apartment issue tracking system designed to help residents report problems (electricity, water, maintenance) and track them until resolved.",
       tags: ["Developer / Product Builder", "Currently Building"],
-      color: "from-emerald-500/10 via-teal-500/5 to-white",
-      icon: Home,
-      iconColor: "text-emerald-500",
-      bgGlow: "bg-emerald-400/10",
-      link: null
+      link: null,
+      image: aptfixImg
     }
   ];
 
@@ -51,20 +47,23 @@ const Projects = () => {
             const CardContent = (
               <div className="h-full flex flex-col">
                 {/* Card Header Illustration */}
-                <div className={`h-48 md:h-56 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden border-b border-neutral-100`}>
+                <div className="h-56 md:h-64 relative overflow-hidden border-b border-neutral-100 bg-neutral-50 flex items-center justify-center">
                   
-                  {/* Decorative background shape */}
-                  <div className={`absolute w-36 h-36 rounded-full ${project.bgGlow} filter blur-xl group-hover:scale-110 transition-transform duration-500`}></div>
+                  {/* Mockup Image */}
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" 
+                    draggable="false"
+                  />
+
+                  {/* Dark overlay for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/20 via-transparent to-transparent opacity-60"></div>
                   
                   {/* Status Badge */}
-                  <div className="absolute top-6 left-6 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-neutral-100/50 shadow-sm z-20">
+                  <div className="absolute top-6 left-6 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-neutral-100/50 shadow-sm z-20">
                     <span className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse"></span>
                     <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-600">Currently Building</span>
-                  </div>
-
-                  {/* Icon Container */}
-                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md border border-neutral-100 z-10 group-hover:scale-105 transition-transform duration-300">
-                    <project.icon className={`w-8 h-8 ${project.iconColor}`} />
                   </div>
 
                   {/* Diagonal Arrow Overlay */}
