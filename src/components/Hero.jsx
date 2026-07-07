@@ -42,22 +42,20 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { value: "10+", label: "Projects Completed", icon: Briefcase },
-    { value: "2+", label: "Years Experience", icon: Code2 },
-    { value: "5+", label: "Technologies", icon: Users },
-    { value: "100%", label: "Client Satisfaction", icon: Trophy },
-    { value: "5+", label: "Hackathons", icon: Star }
+    { value: "7", label: "Core Technical Skills", icon: Code2 },
+    { value: "2", label: "Hackathons Participated", icon: Users },
+    { value: "3", label: "Weekend Explore Versions", icon: Trophy },
+    { value: "1", label: "Product Currently Building", icon: Briefcase }
   ];
 
   const technologies = [
     { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
     { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
     { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' }
+    { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' }
   ];
 
   return (
@@ -88,13 +86,17 @@ const Hero = () => {
           </h1>
 
           {/* Role */}
-          <h3 className="text-neutral-500 font-bold uppercase tracking-[0.25em] text-xs md:text-sm mb-6 flex items-center gap-1.5">
-            Full Stack Developer <span className="text-neutral-300 font-light font-sans text-lg">|</span>
+          <h3 className="text-neutral-500 font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-6 flex flex-wrap items-center gap-2">
+            <span>Full Stack Web Developer</span>
+            <span className="text-neutral-300 font-light font-sans text-sm">|</span>
+            <span>CSE-AIML Student</span>
+            <span className="text-neutral-300 font-light font-sans text-sm">|</span>
+            <span>Product Builder</span>
           </h3>
 
           {/* Description */}
           <p className="text-neutral-500 text-sm md:text-base font-normal leading-relaxed max-w-xl mb-8">
-            I build clean, modern & responsive web applications that deliver exceptional user experiences.
+            I enjoy building real-world web products and turning ideas into working digital experiences. Currently building and improving Weekend Explore.
           </p>
 
           {/* Action Buttons & Social Icons Group */}
@@ -142,7 +144,7 @@ const Hero = () => {
 
           {/* FLOATING STATISTICS CARD (Matching reference layout) */}
           <div className="bg-white border border-neutral-100/80 rounded-2xl p-6 shadow-sm mb-6 max-w-2xl w-full">
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center relative after:absolute after:right-0 after:top-1/4 after:h-1/2 after:w-[1px] after:bg-neutral-100 last:after:hidden">
                   {/* Icon */}

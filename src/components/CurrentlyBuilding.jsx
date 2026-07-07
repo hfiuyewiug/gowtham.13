@@ -1,40 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Sparkles, Trophy, Cpu, Calendar } from 'lucide-react';
+import { Sparkles, Briefcase, Code2 } from 'lucide-react';
 
 const CurrentlyBuilding = () => {
   const activeProjects = [
     {
-      title: "QuickBus 2.0",
-      type: "Mobile & Web App",
-      status: "In Progress",
-      description: "Re-engineering the KSRTC finder to support offline-first caching, regional language search, and crowdsourced live bus coordinates.",
-      progress: 75,
-      tech: ["React Native", "SQLite", "Node.js"]
-    }
-  ];
-
-  const hackathons = [
-    {
-      title: "Smart India Hackathon (SIH)",
-      role: "Team Lead & Full Stack Developer",
-      project: "Arogya AI - Voice-first healthcare assistant",
-      achievement: "Top 10 Finalist",
-      year: "2024"
-    },
-    {
-      title: "VTU State Level Hackathon",
-      role: "Lead Developer",
-      project: "QuickBus - KSRTC Timing Predictor",
-      achievement: "1st Place Winner",
-      year: "2023"
-    },
-    {
-      title: "HackFest Karnataka",
-      role: "Frontend Developer",
-      project: "Weekend Explore Route Optimizer",
-      achievement: "Best UI/UX Award",
-      year: "2022"
+      title: "Weekend Explore v1.3",
+      type: "Travel Discovery Platform",
+      status: "Currently Building",
+      description: "A travel discovery platform focused on helping users explore destinations and discover places for their weekend journeys.",
+      progress: 90,
+      tech: ["HTML", "CSS", "JavaScript", "React"]
     }
   ];
 
@@ -120,41 +96,30 @@ const CurrentlyBuilding = () => {
 
             {/* Timeline Cards */}
             <div className="space-y-4">
-              {hackathons.map((h, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="p-5 bg-white border border-neutral-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 flex gap-4 items-start"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <Trophy className="w-5 h-5" />
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="p-6 bg-white border border-neutral-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-200 flex gap-4 items-start"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <Code2 className="w-6 h-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <h3 className="text-base font-bold text-neutral-900">
+                      Gaining Experience
+                    </h3>
+                    <span className="text-[10px] font-bold text-neutral-400 bg-neutral-50 border border-neutral-100 px-2 py-0.5 rounded-full whitespace-nowrap">
+                      2 Participated
+                    </span>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <h3 className="text-sm font-bold text-neutral-900 truncate">
-                        {h.title}
-                      </h3>
-                      <span className="text-[10px] font-bold text-neutral-400 bg-neutral-50 border border-neutral-100 px-2 py-0.5 rounded-full whitespace-nowrap">
-                        {h.year}
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-500 font-semibold mb-2">
-                      Project: <span className="text-neutral-800">{h.project}</span>
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block px-2.5 py-0.5 bg-emerald-50 border border-emerald-100/50 rounded-full text-[9px] font-bold tracking-wider uppercase text-emerald-600 shadow-sm">
-                        {h.achievement}
-                      </span>
-                      <span className="text-[9px] font-medium text-neutral-400 uppercase tracking-wide">
-                        {h.role}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  <p className="text-sm text-neutral-500 font-normal leading-relaxed">
+                    Participated in 2 hackathons, focused on learning, rapid problem-solving, and gaining real-world development experience.
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
 

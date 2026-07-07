@@ -5,7 +5,6 @@ import AboutAndSkills from './components/AboutAndSkills';
 import Projects from './components/FeaturedProjects';
 import CurrentlyBuilding from './components/CurrentlyBuilding';
 import JourneyAndAchievements from './components/JourneyAndAchievements';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -29,9 +28,6 @@ function App() {
 
       {/* Career Journey & Achievements Milestones */}
       <JourneyAndAchievements />
-
-      {/* Testimonials Review Slider */}
-      <Testimonials />
 
       {/* Interactive Contact Form & Email Details */}
       <Contact />

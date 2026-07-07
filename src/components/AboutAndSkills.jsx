@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, MapPin, Mail, Sparkles, Plus, Check } from 'lucide-react';
+import { User, MapPin, Mail, Sparkles, Check } from 'lucide-react';
 
 const AboutAndSkills = () => {
   const [copied, setCopied] = useState(false);
@@ -15,23 +15,14 @@ const AboutAndSkills = () => {
   const mainSkills = [
     { name: 'HTML5', color: '#E34F26', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
     { name: 'CSS3', color: '#1572B6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'Java', color: '#007396', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
     { name: 'JavaScript', color: '#F7DF1E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     { name: 'React', color: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Node.js', color: '#339933', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'MongoDB', color: '#47A248', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Tailwind CSS', color: '#06B6D4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-    { name: 'Git', color: '#F05032', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'Python', color: '#3776AB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'SQL', color: '#00758F', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
+    { name: 'SQL', color: '#00758F', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'Python', color: '#3776AB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' }
   ];
 
-  const extraSkills = [
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-head.svg' },
-    { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg' },
-    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
-  ];
+  const extraSkills = [];
 
   return (
     <section id="about" className="py-24 bg-neutral-50/50 relative overflow-hidden">
@@ -56,12 +47,12 @@ const AboutAndSkills = () => {
 
               {/* Title */}
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-snug mb-6">
-                Building digital experiences that make an <span className="text-violet-400">impact.</span>
+                Full Stack Web Developer & <span className="text-violet-400">AIML Student.</span>
               </h2>
 
               {/* Description */}
               <p className="text-neutral-400 text-sm md:text-base font-normal leading-relaxed mb-8">
-                I'm a passionate Full Stack Developer who loves turning ideas into real-world solutions. I specialize in building scalable, performant and user-friendly web applications.
+                I am Gowtham N, a Full Stack Web Developer and 2nd-year CSE-AIML engineering student. I enjoy building real-world web products and turning ideas into working digital experiences. Currently, I am focused on building and continuously improving Weekend Explore.
               </p>
 
               {/* Information Grid */}
@@ -84,7 +75,7 @@ const AboutAndSkills = () => {
                   </div>
                   <div>
                     <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-semibold">Location</span>
-                    <span className="text-sm font-medium text-neutral-200">Mangalore, India</span>
+                    <span className="text-sm font-medium text-neutral-200">Mangaluru, Karnataka</span>
                   </div>
                 </div>
 
@@ -107,14 +98,14 @@ const AboutAndSkills = () => {
                   </span>
                 </button>
 
-                {/* Item: Availability */}
+                {/* Item: Education */}
                 <div className="flex items-center gap-4">
                   <div className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-semibold">Availability</span>
-                    <span className="text-sm font-medium text-neutral-200">Open to opportunities</span>
+                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-semibold">Education</span>
+                    <span className="text-sm font-medium text-neutral-200">2nd Year CSE-AIML at NIAT</span>
                   </div>
                 </div>
               </div>
@@ -145,7 +136,7 @@ const AboutAndSkills = () => {
               </h2>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
                 {mainSkills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -169,44 +160,46 @@ const AboutAndSkills = () => {
             </div>
 
             {/* Expandable Skills Drawer */}
-            <div>
-              <button 
-                onClick={() => setShowMoreSkills(!showMoreSkills)}
-                className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-600 hover:text-violet-700 transition-colors py-2 focus:outline-none"
-              >
-                <span>{showMoreSkills ? "- Close technologies" : "+5 more technologies"}</span>
-              </button>
+            {extraSkills.length > 0 && (
+              <div>
+                <button 
+                  onClick={() => setShowMoreSkills(!showMoreSkills)}
+                  className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-600 hover:text-violet-700 transition-colors py-2 focus:outline-none"
+                >
+                  <span>{showMoreSkills ? "- Close technologies" : "+5 more technologies"}</span>
+                </button>
 
-              <AnimatePresence>
-                {showMoreSkills && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden mt-4 pt-4 border-t border-neutral-100"
-                  >
-                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                      {extraSkills.map((skill) => (
-                        <div 
-                          key={skill.name}
-                          className="flex flex-col items-center justify-center p-3 rounded-xl bg-neutral-50/50 border border-neutral-100 hover:border-neutral-200 transition-colors duration-200"
-                        >
-                          <img 
-                            src={skill.icon} 
-                            alt={skill.name} 
-                            className="w-8 h-8 mb-2 filter grayscale hover:grayscale-0 transition-all duration-300"
-                          />
-                          <span className="text-[10px] font-semibold text-neutral-600">
-                            {skill.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                <AnimatePresence>
+                  {showMoreSkills && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-4 pt-4 border-t border-neutral-100"
+                    >
+                      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                        {extraSkills.map((skill) => (
+                          <div 
+                            key={skill.name}
+                            className="flex flex-col items-center justify-center p-3 rounded-xl bg-neutral-50/50 border border-neutral-100 hover:border-neutral-200 transition-colors duration-200"
+                          >
+                            <img 
+                              src={skill.icon} 
+                              alt={skill.name} 
+                              className="w-8 h-8 mb-2 filter grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                            <span className="text-[10px] font-semibold text-neutral-600">
+                              {skill.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
 
         </div>
