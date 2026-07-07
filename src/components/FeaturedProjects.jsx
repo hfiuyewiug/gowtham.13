@@ -24,7 +24,7 @@ const Projects = () => {
       icon: Home,
       iconColor: "text-emerald-500",
       bgGlow: "bg-emerald-400/10",
-      link: "https://github.com/hfiuyewiug/gowtham.13"
+      link: null
     }
   ];
 
@@ -43,30 +43,13 @@ const Projects = () => {
               My featured products
             </h2>
           </div>
-          
-          <a 
-            href="https://github.com/hfiuyewiug/gowtham.13" 
-            target="_blank" 
-            rel="noreferrer"
-            className="group flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-neutral-900 transition-colors mt-4 md:mt-0"
-          >
-            <span>View Code Repository</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projectsData.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group rounded-3xl border border-neutral-100 bg-neutral-50/50 overflow-hidden hover:border-neutral-200 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-900/[0.02]"
-            >
-              <a href={project.link} target="_blank" rel="noreferrer" className="block h-full flex flex-col">
+          {projectsData.map((project, idx) => {
+            const CardContent = (
+              <div className="h-full flex flex-col">
                 {/* Card Header Illustration */}
                 <div className={`h-48 md:h-56 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden border-b border-neutral-100`}>
                   
@@ -85,9 +68,11 @@ const Projects = () => {
                   </div>
 
                   {/* Diagonal Arrow Overlay */}
-                  <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:border-neutral-300 shadow-sm transition-all duration-300 z-20">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
+                  {project.link && (
+                    <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:border-neutral-300 shadow-sm transition-all duration-300 z-20">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Body */}
@@ -113,9 +98,32 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-              </a>
-            </motion.div>
-          ))}
+              </div>
+            );
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className={`group rounded-3xl border border-neutral-100 bg-neutral-50/50 overflow-hidden hover:border-neutral-200 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-900/[0.02] ${
+                  project.link ? 'cursor-pointer' : 'cursor-default'
+                }`}
+              >
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noreferrer" className="block h-full">
+                    {CardContent}
+                  </a>
+                ) : (
+                  <div className="h-full">
+                    {CardContent}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

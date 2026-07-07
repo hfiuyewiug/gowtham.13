@@ -22,7 +22,7 @@ const JourneyAndAchievements = () => {
     },
     {
       version: "v1.3",
-      period: "2025 - Present",
+      period: "",
       title: "Weekend Explore v1.3",
       stage: "Currently Building",
       description: "Current development version focused on improving the platform, adding better experiences, and expanding Weekend Explore.",
@@ -63,9 +63,11 @@ const JourneyAndAchievements = () => {
                   </span>
 
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="inline-block px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs font-semibold text-neutral-500 shadow-sm">
-                      {item.period}
-                    </span>
+                    {item.period && (
+                      <span className="inline-block px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs font-semibold text-neutral-500 shadow-sm">
+                        {item.period}
+                      </span>
+                    )}
                     {item.status === 'Currently Building' && (
                       <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-violet-50 border border-violet-100 text-[9px] font-bold uppercase tracking-wider text-violet-600">
                         <span className="w-1 h-1 rounded-full bg-violet-600 animate-pulse"></span>
